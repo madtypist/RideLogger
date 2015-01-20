@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RideLogger</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="button_list_rides">View List of Rides</string>
+    <string name="button_new_ride">Log a New Ride</string>
+    <string name="title_activity_list_rides">ListRidesActivity</string>
+
+</resources>

@@ -1,6 +1,8 @@
 package com.jellyink.ridelogger;
 
-import java.util.Date;
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
+import org.joda.time.LocalDate;
 
 /**
  * Created by jessielink on 1/21/15.
@@ -9,19 +11,24 @@ public class Ride {
 
     private String title;
     private String notes;
-    private Date rideDateStart;
-    private Date rideDateEnd;
+    private Interval rideInterval;
     private Integer id;
-    // duration
-    // bike ID?
+    private Double distance;
 
-
-    public Ride(String title, String notes, Date rideDateStart, Date rideDateEnd, Integer id) {
+    public Ride(String title, String notes, Interval rideInterval, Integer id, Double distance) {
         this.title = title;
         this.notes = notes;
-        this.rideDateStart = rideDateStart;
-        this.rideDateEnd = rideDateEnd;
         this.id = id;
+        this.distance = distance;
+        this.rideInterval = rideInterval;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
     }
 
     public String getTitle() {
@@ -40,20 +47,16 @@ public class Ride {
         this.notes = notes;
     }
 
-    public Date getRideDateStart() {
-        return rideDateStart;
+    public Interval getRideInterval() {
+        return rideInterval;
     }
 
-    public void setRideDateStart(Date rideDateStart) {
-        this.rideDateStart = rideDateStart;
+    public void setRideInterval(DateTime startTime, DateTime endTime) {
+        this.rideInterval = new Interval(startTime, endTime);
     }
 
-    public Date getRideDateEnd() {
-        return rideDateEnd;
-    }
-
-    public void setRideDateEnd(Date rideDateEnd) {
-        this.rideDateEnd = rideDateEnd;
+    public DateTime getStartDate() {
+        return this.rideInterval.getStart();
     }
 
     public Integer getId() {

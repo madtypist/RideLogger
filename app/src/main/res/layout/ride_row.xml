@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:background="#ffffff"
+                android:layout_height="wrap_content">
+    <TextView android:id="@+id/titleTextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textColor="#00DDCC"
+              android:textAppearance="?android:attr/textAppearanceMedium"
+              android:text="Ride Title"
+              android:paddingLeft="15dp"
+              android:textSize="25dp" />
+
+    <TextView android:id="@+id/rideDateTextView"
+              android:textColor="@color/abc_primary_text_material_light"
+              android:text="Ride Date Here"
+              android:paddingLeft="30dp"
+              android:layout_below="@id/titleTextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+
+    <TextView android:id="@+id/distanceTextView"
+              android:text="Ride Distance: "
+              android:layout_below="@id/rideDateTextView"
+              android:paddingLeft="30dp"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+
+</RelativeLayout>

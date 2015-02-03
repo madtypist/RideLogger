@@ -4,23 +4,42 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 
-import java.util.Date;
+import org.joda.time.DateTime;
+import org.joda.time.Interval;
 
 
 public class ListRidesActivity extends ActionBarActivity {
+    //REMOVE THIS LATER
+    Interval interval1 = new Interval(new DateTime(2015,1,11,12,34,33), new DateTime(2015,1,11,14,03,11));
+    Interval interval2 = new Interval(new DateTime(2015,1,14,7,34,33), new DateTime(2015,1,14,9,03,11));
+    Interval interval3 = new Interval(new DateTime(2015,1,29,12,34,33), new DateTime(2015,1,29,14,03,11));
+    Interval interval4 = new Interval(new DateTime(2015,2,1,12,34,33), new DateTime(2015,2,1,14,03,11));
+    Interval interval5 = new Interval(new DateTime(2015,2,3,10,34,33), new DateTime(2015,2,3,13,14,33));
+
     Ride[] mRides = new Ride[]{
-            new Ride("short ride", "Ride went well", new Date(2015,1,10,12,10), new Date(2015,1,10,13,00),1),
-            new Ride("ok ride", "Ride went well", new Date(2015,1,11,12,10), new Date(2015,1,11,13,00),1),
-            new Ride("amazing 20 miler", "Ride went well", new Date(2015,1,12,12,10), new Date(2015,1,12,13,00),1),
-            new Ride("short ride", "Ride went well", new Date(2015,1,14,12,10), new Date(2015,1,14,14,00),1),
-            new Ride("short ride", "Ride went well", new Date(2015,1,21,12,10), new Date(2015,1,21,13,00),1),
+            new Ride("short ride", "Ride went well", interval1 ,1,21.5),
+            new Ride("ok ride", "Ride went well", interval2, 1,21.5),
+            new Ride("amazing 20 miler", "Ride went well", interval3, 1,21.5),
+            new Ride("short ride", "Ride went well", interval4, 1,21.5),
+            new Ride("short ride", "Ride went well", interval5, 1,21.5),
     };
+    // END REMOVE THIS LATER
+
+    private ListView mListView;
+    private RideAdapter mRideAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_rides);
+
+        mListView = (ListView) findViewById(R.id.rideList);
+        mRideAdapter = new RideAdapter(getApplicationContext(),R.layout.ride_row, mRides);
+        if (mListView != null){
+            mListView.setAdapter(mRideAdapter);
+        }
     }
 
 

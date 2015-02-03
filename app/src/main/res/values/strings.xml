@@ -6,6 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="button_list_rides">View List of Rides</string>
     <string name="button_new_ride">Log a New Ride</string>
-    <string name="title_activity_list_rides">ListRidesActivity</string>
+    <string name="title_activity_list_rides">Rides</string>
 
 </resources>

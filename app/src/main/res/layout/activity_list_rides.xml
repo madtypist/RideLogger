@@ -9,8 +9,16 @@
                 tools:context="com.jellyink.ridelogger.ListRidesActivity">
 
     <TextView
+        android:id="@+id/pageTitleText"
         android:text="HERE ARE YOUR FILTHY RIDES"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <ListView android:id="@+id/rideList"
+              android:layout_below="@id/pageTitleText"
+              android:layout_weight="0"
+              android:layout_margin="2dp"
+              android:background="#DDDDDD"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content" />
 </RelativeLayout>
